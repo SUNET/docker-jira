@@ -1,6 +1,6 @@
 # The tags that are recommended to be used for
 # the base image are: latest, staging, stable
-FROM docker.sunet.se/eduix/eduix-base:stable
+FROM docker.sunet.se/eduix/eduix-base:master
 MAINTAINER Jarkko Leponiemi "jarkko.leponiemi@eduix.fi"
 
 # Setup useful environment variables
@@ -8,8 +8,8 @@ ENV JIRA_HOME     /var/atlassian/application-data/jira
 ENV JIRA_INSTALL  /opt/atlassian/jira
 ENV HEAP_START          2048m
 ENV HEAP_MAX            2048m
-ARG CONF_VERSION=8.13.13
-ARG JIRA_SHA256_CHECKSUM=6ce0bf79e6b64e2aaff469d28b2543c816ab44b61c853a15853bcf9d8c7064be
+ARG CONF_VERSION=8.13.18
+ARG JIRA_SHA256_CHECKSUM=7b2dc4e9b9ba9ea60cbfbe0845f227a23be37956e676b0d4a7ad7f14777a89ea
 
 LABEL Description="This image is used to start Atlassian Jira" Vendor="Atlassian" Version="${CONF_VERSION}"
 
