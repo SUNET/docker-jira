@@ -1,0 +1,31 @@
+docker_name: eduix/jira
+docker_tags:
+    - "${GIT_LOCAL_BRANCH}"
+builders:
+  - docker
+git:
+  branch: master
+  extensions:
+    checkout_local_branch: true
+triggers:
+  cron: "@daily"
+clean_workspace: true
+downstream:
+  - docker-jira-staging
+  - docker-jira-stable
+
+extra_jobs:
+    - name: docker-jira-staging
+      builders:
+        - docker
+      docker_skip_tag_as_latest: true
+      git:
+        branch: staging
+      downstream: []
+    - name: docker-jira-stable
+      builders:
+        - docker
+      docker_skip_tag_as_latest: true
+      git:
+        branch: stable
+      downstream: []
