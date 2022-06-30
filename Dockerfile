@@ -8,8 +8,8 @@ ENV JIRA_HOME     /var/atlassian/application-data/jira
 ENV JIRA_INSTALL  /opt/atlassian/jira
 ENV HEAP_START          2048m
 ENV HEAP_MAX            2048m
-ARG CONF_VERSION=8.13.18
-ARG JIRA_SHA256_CHECKSUM=7b2dc4e9b9ba9ea60cbfbe0845f227a23be37956e676b0d4a7ad7f14777a89ea
+ARG CONF_VERSION=8.13.22
+ARG JIRA_SHA256_CHECKSUM=9b63e63dfd9211195666b126cd77bfd3669f8b005672517ff1e4387605da436f
 
 LABEL Description="This image is used to start Atlassian Jira" Vendor="Atlassian" Version="${CONF_VERSION}"
 
