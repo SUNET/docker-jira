@@ -10,7 +10,6 @@ apt-get update && \
     apt-get -y dist-upgrade && \
     apt-get install -y \
         ssl-cert\
-        libmariadb-java\
     && apt-get -y autoremove \
     && apt-get autoclean
 
@@ -33,7 +32,6 @@ fi
 
 tar -xzf /opt/jira-software.tar.gz --directory "${JIRA_INSTALL}" --strip-components=1 --no-same-owner \
     && rm -f /opt/jira-software.tar.gz \
-    && ln -s /usr/share/java/mariadb-java-client.jar /opt/atlassian/jira/lib/mariadb-java-client.jar \
     && mv /opt/sunet/server.xml "${JIRA_INSTALL}/conf/server.xml"\
     && chmod -R 700                       "${JIRA_INSTALL}/conf" \
     && chmod -R 700                       "${JIRA_INSTALL}/temp" \
