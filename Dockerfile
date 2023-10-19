@@ -7,7 +7,7 @@ MAINTAINER Jarkko Leponiemi "jarkko.leponiemi@eduix.fi"
 ENV JIRA_HOME     /var/atlassian/application-data/jira
 ENV JIRA_INSTALL  /opt/atlassian/jira
 ENV HEAP_START          2048m
-ENV HEAP_MAX            2048m
+ENV HEAP_MAX            4096m
 ARG CONF_VERSION=8.20.27
 ARG JIRA_SHA256_CHECKSUM=3534297df0b7ebd38eaeddcf9351c32e7175cbcc93bc25e53ea183d0a390473f
 
